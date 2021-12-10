@@ -1,4 +1,4 @@
-package com.masai.calendertaskmanager.api.model
+package com.masai.calendertaskmanager.api.model.response
 
 
 import com.google.gson.annotations.SerializedName

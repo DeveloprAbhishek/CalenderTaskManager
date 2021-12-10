@@ -2,18 +2,17 @@ package com.masai.calendertaskmanager.api.repo
 
 import androidx.lifecycle.LiveData
 import com.masai.calendertaskmanager.api.local.TaskDao
-import com.masai.calendertaskmanager.api.model.GetTaskResponse
-import com.masai.calendertaskmanager.api.model.TaskDetail
+import com.masai.calendertaskmanager.api.model.response.GetTaskResponse
+import com.masai.calendertaskmanager.api.model.request.RequestGetTask
+import com.masai.calendertaskmanager.api.model.response.TaskDetail
 import com.masai.calendertaskmanager.api.remote.ServiceGenerator
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import okhttp3.RequestBody
 import javax.inject.Inject
 
 class TaskRepository @Inject constructor(val taskDao: TaskDao){
-
-    fun getRemoteTasks(requestBody: RequestBody) {
+    fun getRemoteTasks(requestBody: RequestGetTask) {
         lateinit var response : GetTaskResponse
         CoroutineScope(Dispatchers.IO).launch {
             response = ServiceGenerator.getApiService().getCalenderTaskList(requestBody)
@@ -24,13 +23,7 @@ class TaskRepository @Inject constructor(val taskDao: TaskDao){
     private fun saveToDB(response: GetTaskResponse) {
         var list  = ArrayList<TaskDetail>()
         response.tasks.forEach {
-        val task = TaskDetail(
-                it.taskDetail.id,
-                it.taskDetail.date,
-                it.taskDetail.description,
-                it.taskDetail.title
-            )
-            list.add(task)
+            list.add(it.taskDetail)
         }
         taskDao.deleteAllTasks()
         taskDao.addAllTasks(list)

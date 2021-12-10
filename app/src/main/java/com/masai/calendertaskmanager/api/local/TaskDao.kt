@@ -2,7 +2,7 @@ package com.masai.calendertaskmanager.api.local
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.masai.calendertaskmanager.api.model.TaskDetail
+import com.masai.calendertaskmanager.api.model.response.TaskDetail
 
 @Dao
 interface TaskDao {
