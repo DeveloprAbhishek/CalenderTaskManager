@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Abhishek/AndroidStudioProjects/CalenderTaskManager/app/src/main/res/layout/activity_main.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/Abhishek/AndroidStudioProjects/CalenderTaskManager/app/src/main/res/layout/activity_create_task.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/Abhishek/AndroidStudioProjects/CalenderTaskManager/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/Abhishek/AndroidStudioProjects/CalenderTaskManager/app/src/main/res/layout/activity_show_all_task.xml" value="0.2604166666666667" />
+        <entry key="..\:/Users/Abhishek/AndroidStudioProjects/CalenderTaskManager/app/src/main/res/layout/item_task_layout.xml" value="0.27447916666666666" />
       </map>
     </option>
   </component>

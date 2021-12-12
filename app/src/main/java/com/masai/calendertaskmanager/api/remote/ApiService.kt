@@ -12,7 +12,6 @@ interface ApiService {
     @POST("api/getCalendarTaskLists")
     suspend fun getCalenderTaskList(@Body requestBody: RequestGetTask) : GetTaskResponse
 
-
     @POST("api/storeCalendarTask")
     suspend fun setCalenderTask(@Body requestBody: RequestToStoreTask) : StoreTaskResponse
 
